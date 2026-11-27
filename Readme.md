@@ -1,6 +1,8 @@
 # 🚁 日本国内 ドローン飛行制限 ＆ 飛行計画マップ
 
 日本国内のドローン飛行に関する各種制限エリア（人口集中地区・空港周辺空域・小型無人機等飛行禁止法対象施設）および、DIPS 2.0 の直近3日間の飛行計画を地図上にレイヤー表示する Streamlit Web アプリケーションです。PC・スマートフォン（iPhone等）のブラウザから閲覧できます。
+本番アプリ: [https://blank-app-i3grnklynm.streamlit.app/](https://japan-drone-map-sfkj5zxdjkgubdax7jktyk.streamlit.app/)
+
 
 ## 主な機能
 
