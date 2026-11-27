@@ -1,4 +1,3 @@
-Python
 import folium
 import requests
 import streamlit as st
