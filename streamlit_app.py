@@ -1,5 +1,5 @@
+Python
 import folium
-from folium.plugins import GeoJsonTooltip
 import requests
 import streamlit as st
 from streamlit_folium import st_folium
@@ -54,11 +54,9 @@ if show_did:
     ).add_to(m)
 
 # レイヤー2：空港等の周辺空域（地理院タイルのタイルGeoJSON）
-# ※ズームレベル8のタイルGeoJSONを取得して描画
 if show_airport:
     @st.cache_data(ttl=86400)
     def fetch_airport_zones():
-        # 日本全土をカバーするズームレベル8の主要タイル座標
         features = []
         for x in range(224, 236):
             for y in range(95, 107):
@@ -80,13 +78,6 @@ if show_airport:
                 "weight": 1.5,
                 "fillOpacity": 0.35,
             },
-            tooltip=GeoJsonTooltip(
-                fields=["name"],
-                aliases=["空域名称:"],
-                localize=True,
-            )
-            if "name" in airport_geojson["features"][0].get("properties", {})
-            else None,
         ).add_to(m)
 
 # 地図右上のレイヤー切替コントロールを追加
